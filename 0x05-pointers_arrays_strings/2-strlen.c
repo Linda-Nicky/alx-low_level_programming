@@ -7,7 +7,7 @@
  * Return: Length
  */
 
-size_of _strlen(const char *str)
+size_of_strlen(const char *str)
 {
 	size_of len = 0;
 
