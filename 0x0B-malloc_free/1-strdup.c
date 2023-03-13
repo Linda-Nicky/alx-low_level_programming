@@ -11,17 +11,25 @@ include "main.h"
 
 char *_strdup(char *str)
 {
-	char *result;
-	unsigned int i, j;
+	char *dup;
+	unsigned int i, len;
+
+	i = 0;
+	len = 0;
 
 	if (str == NULL)
 		return (NULL);
-	for (i = 0; str[i] != '\0'; i++)
-		;
-	result = (char *)malloc(sizeof(char) * (i + 1));
-	if (result == NULL)
+
+	while (str[len])
+		len++;
+
+	dup = malloc(sizeof(char) * (len + 1));
+
+	if (dup == NULL)
 		return (NULL);
-	for (j = 0; j <= i; j++)
-		result[j] = str[j];
-	return (result);
+
+	while ((dup[i] = str[i]) != '\0')
+		i++;
+
+	return (dup);
 }
