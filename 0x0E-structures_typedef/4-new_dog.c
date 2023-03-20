@@ -4,16 +4,16 @@
 /**
  * _strlen - a function that gets a length of string
  *
- * @str: the string to get the length
+ * @s: the string to get the length
  *
- * Return: length of @str
+ * Return: length of @s
  */
 
-int _strlen(const char *str)
+int _strlen(char *s)
 {
 	int length = 0;
 
-	while (*str++)
+	while (*s++)
 		length++;
 	return (length);
 }
