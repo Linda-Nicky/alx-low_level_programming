@@ -6,7 +6,7 @@
  * free_listint - a function that frees a listint_t list.
  * @head: a pointer to the head (first node) of the listint_t list
  *
- * Return:
+ * Return: void on success
  */
 
 void free_listint(listint_t *head)
