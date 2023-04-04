@@ -22,7 +22,7 @@ size_t listint_len(const listint_t *h)
 		 */
 
 		element = element + 1;
-		printf("%d/n", ptr->n);
+		printf("%d\n", ptr->n);
 		ptr = ptr->next;
 	}
 
