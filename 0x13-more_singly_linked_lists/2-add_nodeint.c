@@ -8,12 +8,12 @@
  * @head: a pointer to the head (first node) of the listint_t list.
  * @n: integer to be contained in the new node added at the beginning.
  *
- * Result: the address of the new element, or NULL if it failed.
+ * Return: the address of the new element, or NULL if it failed.
  */
 
 listint_t *add_nodeint(listint_t **head, const int n)
 {
-	listint_t *new_node, *first_node;
+	listint_t *new_node = *head;
 
 	new_node = malloc(sizeof(listint_t));
 	if
@@ -29,15 +29,5 @@ listint_t *add_nodeint(listint_t **head, const int n)
 		{
 			*head = new_node;
 		}
-	else
-	{
-		first_node = *head;
-		while (first_node->next != NULL)
-		{
-			first_node = first_node->next;
-		}
-		first_node->next = new_node;
-	}
-
 	return (new_node);
 }
