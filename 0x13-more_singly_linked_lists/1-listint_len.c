@@ -12,7 +12,7 @@
 
 size_t listint_len(const listint_t *h)
 {
-	size_t element = 0;
+	size_t number = 0;
 	const listint_t *ptr = h;
 
 	while (ptr)
@@ -21,10 +21,10 @@ size_t listint_len(const listint_t *h)
 		 * increment
 		 */
 
-		element = element + 1;
+		number = number + 1;
 		printf("%d\n", ptr->n);
 		ptr = ptr->next;
 	}
 
-	return (element);
+	return (number);
 }
