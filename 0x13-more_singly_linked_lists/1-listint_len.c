@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdlib.h>
 #include <stdio.h>
 
 /**
@@ -22,7 +21,6 @@ size_t listint_len(const listint_t *h)
 		 */
 
 		number = number + 1;
-		printf("%d\n", ptr->n);
 		ptr = ptr->next;
 	}
 
