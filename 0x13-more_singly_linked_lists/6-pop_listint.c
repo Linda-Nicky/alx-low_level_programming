@@ -26,7 +26,7 @@ int pop_listint(listint_t **head)
 		(*head)
 		{
 			a = tnode->n;
-			tnode->next = *head;
+			*head = tnode->next;
 			free(retnode);
 		}
 
