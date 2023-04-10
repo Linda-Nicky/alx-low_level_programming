@@ -10,36 +10,24 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int newfile, len, edit;
+	int newfile, edit, len;
 
-	if
-		(filename == NULL)
-		{
-			return (-1);
-		}
-	if
-		(text_content == NULL)
-		{
-			for (len = 0; text_content[len];)
-				len = len + 1;
-		}
+	if (filename == NULL)
+		return (-1);
 
+	if (text_content != NULL)
+	{
+		for (len = 0; text_content[len];)
+			len = len + 1;
+	}
 
-	newfile = open(filename, O_CREAT | O_RDWR | S_IWUSR | O_TRUNC, O_IRUSR;
+	newfile = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 	edit = write(newfile, text_content, len);
 
-	if
-		(newfile == -1)
-		{
-			return (-1);
-		}
-	if
-		(edit == -1)
-		{
-			return (-1);
-		}
+	if (newfile == -1 || edit == -1)
+		return (-1);
+
 	close(newfile);
 
 	return (1);
-
 }
