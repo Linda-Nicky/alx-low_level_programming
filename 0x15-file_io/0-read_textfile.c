@@ -16,39 +16,29 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char *file_buffer;
 	ssize_t check, text_file, edit;
 
-	while
-		(filename == NULL)
-		{
-			return (0);
-		}
+	if (filename == NULL)
+	{
+		return (0);
+	}
+	
 	file_buffer = malloc(sizeof(char) * letters);
+	if (file_buffer == NULL)
+	{
+		return (0);
+	}
 
 	check = open(filename, O_RDONLY);
 	text_file = read(check, file_buffer, letters);
-	edit = write(STDOUT_FILENO, file_buffer, check);
+	edit = write(STDOUT_FILENO, file_buffer, text_file);
 
-	if
-		(file_buffer == NULL)
-		{
-			return (0);
-		}
+	if (check == -1 || text_file == -1 || edit == -1 || edit != text_file)
+	{
+		free(file_buffer);
+		return (0);
+	}
 
+	free(file_buffer);
+	close(check);
 
-	while
-		(check == -1)
-		{
-			return (0);
-		}
-	if
-		(text_file == -1)
-		{
-			return (0);
-			free(file_buffer);
-		}
-	if
-		(edit != check)
-		{
-			return (0);
-		}
 	return (edit);
 }
