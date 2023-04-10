@@ -24,7 +24,8 @@ int create_file(const char *filename, char *text_content)
 				len = len + 1;
 		}
 
-	newfile = open(filename, O_CREAT | O_RDWR | S_IWUSR | O_TRUNC, S_IRUSR);
+
+	newfile = open(filename, O_CREAT | O_WRONLY | O_RDWR | S_IWUSR | O_TRUNC, S_IRUSR);
 	edit = write(newfile, text_content, len);
 
 	if
